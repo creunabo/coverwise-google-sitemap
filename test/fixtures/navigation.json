@@ -1,0 +1,22 @@
+{
+  "level1": [{
+    "title": "Rejseforsikringer",
+    "url": "/rejseforsikringer",
+    "level2": [{
+      "title": "Forsikringsoversigt",
+      "url": "/forsikringsoversigt"
+    }, {
+      "title": "Enkeltrejseforsikring",
+      "url": "/produkt/enkeltrejseforsikring"
+    }]
+  }, {
+    "title": "F.A.Q.",
+    "url": "/faq"
+  }, {
+    "title": "Om Coverwise",
+    "url": "/om-coverwise"
+  }, {
+    "title": "Anmeld skade",
+    "url": "/anmeld-skade"
+  }]
+}
