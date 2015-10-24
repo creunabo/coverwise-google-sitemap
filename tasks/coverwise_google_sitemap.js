@@ -7,6 +7,7 @@
  */
 
 'use strict';
+var _ = require('lodash');
 
 module.exports = function(grunt) {
 
@@ -18,6 +19,21 @@ module.exports = function(grunt) {
     var options = this.options({
       urlKey: 'url'
     });
+
+
+    function findNested(obj, key, memo) {
+      if (!_.isArray(memo)) {
+        memo = [];
+      }
+      _.forOwn(obj, function(val, i) {
+        if (i === key) {
+          memo.push(val);
+        } else {
+          findNested(val, key, memo);
+        }
+      });
+      return memo;
+    }
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
@@ -33,13 +49,15 @@ module.exports = function(grunt) {
       }).map(function(filepath) {
         // Read file source.
         return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.urlKey));
+      });
+
+      var flat = findNested(JSON.parse(src), 'url');
 
       // Handle options.
       //src += options.punctuation;
 
       // Write the destination file.
-      grunt.file.write(f.dest, src);
+      grunt.file.write(f.dest, JSON.stringify(flat));
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
