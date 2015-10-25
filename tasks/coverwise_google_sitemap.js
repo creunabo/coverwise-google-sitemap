@@ -17,7 +17,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('coverwise_google_sitemap', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      urlKey: 'url'
+      rootDomain: 'https://coverwisedk.azurewebsites.net'
     });
 
 
@@ -51,13 +51,20 @@ module.exports = function(grunt) {
         return grunt.file.read(filepath);
       });
 
+      var content = '<?xml version="1.0" encoding="UTF-8"?>';
+      content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
       var flat = findNested(JSON.parse(src), 'url');
+
+      _.each(flat, function(item) {
+        content += '<url><loc>' + options.rootDomain + item + '</loc></url>';
+      });
+      content += '</urlset>\n';
 
       // Handle options.
       //src += options.punctuation;
 
       // Write the destination file.
-      grunt.file.write(f.dest, JSON.stringify(flat));
+      grunt.file.write(f.dest, content);
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
