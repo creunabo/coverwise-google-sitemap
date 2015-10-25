@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.coverwise_google_sitemap = {
+exports.json2google_sitemap = {
   setUp: function(done) {
     // setup here if necessary
     done();

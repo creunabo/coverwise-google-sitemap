@@ -1,6 +1,6 @@
 /*
- * grunt-coverwise-google-sitemap
- * https://github.com/bo.petersen/coverwise-google-sitemap
+ * json2google-sitemap
+ * https://github.com/creunabo/json2google-sitemap
  *
  * Copyright (c) 2015 Bo Petersen
  * Licensed under the MIT license.
@@ -29,10 +29,10 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    coverwise_google_sitemap: {
+    json2google_sitemap: {
       default_options: {
         options: {
-          rootDomain: 'https://coverwisedk.azurewebsites.net'
+          rootDomain: 'https://your.domain'
         },
         files: {
           'tmp/sitemap.xml': ['test/fixtures/navigation.json']
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'coverwise_google_sitemap', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'json2google_sitemap', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

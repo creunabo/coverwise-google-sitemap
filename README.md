@@ -1,4 +1,4 @@
-# grunt-coverwise-google-sitemap
+# grunt-json2google_sitemap-google-sitemap
 
 > The best Grunt plugin ever.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.5`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-coverwise-google-sitemap --save-dev
+npm install grunt-json2google_sitemap-google-sitemap --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-coverwise-google-sitemap');
+grunt.loadNpmTasks('json2google-sitemap');
 ```
 
-## The "coverwise_google_sitemap" task
+## The "json2google-sitemap" task
 
 ### Overview
-In your project's Gruntfile, add a section named `coverwise_google_sitemap` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `json2google-sitemap` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  coverwise_google_sitemap: {
+  json2google-sitemap: {
     options: {
       // Task-specific options go here.
     },
@@ -56,7 +56,7 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  coverwise_google_sitemap: {
+  json2google-sitemap: {
     options: {},
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
@@ -70,7 +70,7 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  coverwise_google_sitemap: {
+  json2google-sitemap: {
     options: {
       separator: ': ',
       punctuation: ' !!!',

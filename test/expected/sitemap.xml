@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/rejseforsikringer</loc>
+    <loc>https://your.domain/rejseforsikringer</loc>
   </url>
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/forsikringsoversigt</loc>
+    <loc>https://your.domain/forsikringsoversigt</loc>
   </url>
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/produkt/enkeltrejseforsikring</loc>
+    <loc>https://your.domain/produkt/enkeltrejseforsikring</loc>
   </url>
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/faq</loc>
+    <loc>https://your.domain/faq</loc>
   </url>
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/om-coverwise</loc>
+    <loc>https://your.domain/om-json2google_sitemap</loc>
   </url>
   <url>
-    <loc>https://coverwisedk.azurewebsites.net/anmeld-skade</loc>
+    <loc>https://your.domain/anmeld-skade</loc>
   </url>
 </urlset>
