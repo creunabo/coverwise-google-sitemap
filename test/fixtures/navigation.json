@@ -2,21 +2,27 @@
   "level1": [{
     "title": "Rejseforsikringer",
     "url": "/rejseforsikringer",
+    "sitemap": true,
     "level2": [{
       "title": "Forsikringsoversigt",
-      "url": "/forsikringsoversigt"
+      "url": "/forsikringsoversigt",
+      "sitemap": true
     }, {
       "title": "Enkeltrejseforsikring",
-      "url": "/produkt/enkeltrejseforsikring"
+      "url": "/produkt/enkeltrejseforsikring",
+      "sitemap": true
     }]
   }, {
     "title": "F.A.Q.",
-    "url": "/faq"
+    "url": "/faq",
+    "sitemap": true
   }, {
     "title": "Om Coverwise",
-    "url": "/om-coverwise"
+    "url": "/om-coverwise",
+    "sitemap": false
   }, {
     "title": "Anmeld skade",
-    "url": "/anmeld-skade"
+    "url": "/anmeld-skade",
+    "sitemap": false
   }]
 }

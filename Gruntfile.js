@@ -31,13 +31,13 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     coverwise_google_sitemap: {
       default_options: {
-        options: {},
+        options: {
+          rootDomain: 'https://coverwisedk.azurewebsites.net'
+        },
         files: {
           'tmp/sitemap.xml': ['test/fixtures/navigation.json']
         }
-      },
-
-      files: {}
+      }
     },
 
     // Unit tests.

@@ -32,7 +32,7 @@ exports.coverwise_google_sitemap = {
 
     var actual = grunt.file.read('tmp/sitemap.xml');
     var expected = grunt.file.read('test/expected/sitemap.xml');
-    test.equal(actual, expected, 'should match sitemap.xml in test/expected/');
+    test.equal(actual.replace(/\s/g, ''), expected.replace(/\s/g, ''), 'should match sitemap.xml in test/expected/');
 
     test.done();
   }
