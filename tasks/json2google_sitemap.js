@@ -17,19 +17,21 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('json2google_sitemap', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      rootDomain: 'https://your.domain'
+      rootDomain: 'https://your.domain',
+      urlProperty: 'url'
     });
 
-
-    function findNested(obj, key, memo) {
+    function find(obj, key, memo) {
       if (!_.isArray(memo)) {
-        memo = [];
-      }
+        memo = []
+      };
       _.forOwn(obj, function(val, i) {
         if (i === key) {
           memo.push(val);
         } else {
-          findNested(val, key, memo);
+          if (_.isObject(val)) {
+            find(val, key, memo);
+          }
         }
       });
       return memo;
@@ -51,17 +53,15 @@ module.exports = function(grunt) {
         return grunt.file.read(filepath);
       });
 
+      // Handle options.
       var content = '<?xml version="1.0" encoding="UTF-8"?>';
       content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-      var flat = findNested(JSON.parse(src), 'url');
+      var flat = find(JSON.parse(src), options.urlProperty);
 
       _.each(flat, function(item) {
         content += '<url><loc>' + options.rootDomain + item + '</loc></url>';
       });
       content += '</urlset>\n';
-
-      // Handle options.
-      //src += options.punctuation;
 
       // Write the destination file.
       grunt.file.write(f.dest, content);
