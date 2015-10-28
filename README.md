@@ -24,14 +24,17 @@ In your project's Gruntfile, add a section named `json2google-sitemap` to the da
 
 ```js
 grunt.initConfig({
-  json2google-sitemap: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    json2google_sitemap: {
+      default_options: {
+        options: {
+          rootDomain: 'https://your.domain',
+          urlProperty: 'url'
+        },
+        files: {
+          'tmp/sitemap.xml': ['test/fixtures/navigation.json']
+        }
+      }
+    }
 });
 ```
 
@@ -42,3 +45,10 @@ Type: `String`
 Default value: `'https://your.domain'`
 
 A string value that sets the domain.
+
+#### options.urlProperty
+Type: `String`
+Default value: `'url'`
+
+A string value that sets the json property to search for in your json file.
+
