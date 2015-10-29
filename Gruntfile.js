@@ -32,7 +32,8 @@ module.exports = function(grunt) {
     json2google_sitemap: {
       default_options: {
         options: {
-          rootDomain: 'https://your.domain'
+          rootDomain: 'https://your.domain',
+          urlProperty: 'url'
         },
         files: {
           'tmp/sitemap.xml': ['test/fixtures/navigation.json']
