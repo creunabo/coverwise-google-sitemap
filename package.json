@@ -1,7 +1,7 @@
 {
   "name": "json2google-sitemap",
   "description": "a little tool that takes a json file with any key named url and makes google sitemap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/creunabo/json2google-sitemap",
   "author": {
     "name": "Bo Petersen",
